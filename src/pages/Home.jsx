@@ -1,29 +1,26 @@
 import React from "react";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
+import { Chrono } from "react-chrono";
 const Home = () => {
+    const items = [{
+        title: "May 1940",
+        cardTitle: "Dunkirk",
+        url: "http://www.history.com",
+        cardSubtitle:"Men of the British Expeditionary Force (BEF) wade out to..",
+        cardDetailedText: "Men of the British Expeditionary Force (BEF) wade out to..",
+        media: {
+          type: "IMAGE",
+          source: {
+            url: "http://someurl/image.jpg"
+          },
+        }
+    }];
   return (
     <>
-      <VerticalTimeline>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          contentStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-          contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
-          date="2011 - present"
-          iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-        >
-          <h3 className="vertical-timeline-element-title">Creative Director</h3>
-          <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
-          <p>
-            Creative Direction, User Experience, Visual Design, Project
-            Management, Team Leading
-          </p>
-        </VerticalTimelineElement>
-        
-      </VerticalTimeline>
+        <div className="container">
+        <div style={{ width: "100%", height: "600px" }}>
+        <Chrono items={items} />
+      </div>
+        </div>
     </>
   );
 };
